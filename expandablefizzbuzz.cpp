@@ -38,25 +38,25 @@ void game(std::list<chime> l){
     int n = 1;
     std::string str;
     do {
-		str="";
-		for(std::list<chime>::iterator it = l.begin();it!=l.end();it++)
-			if(n%it->num==0)
-                str+=it->word;
-		if(str.length()==0)
-            std::cout << n;
-		else
-            std::cout << str;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        n++;
+	    str="";
+	    for(std::list<chime>::iterator it = l.begin();it!=l.end();it++)
+		    if(n%it->num==0)
+			    str+=it->word;
+	    if(str.length()==0)
+		    std::cout << n;
+	    else
+		    std::cout << str;
+	    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	    n++;
 	} while (true);
 }
 
-///Words are edited here
+///Words are added here
 int main(){
 	std::list<chime>chime_list;
 	chime_list.push_back(chime(3,"Fizz"));
 	chime_list.push_back(chime(5,"Buzz"));
 //	chime_list.push_back(chime(7,"Jazz"));
-    game(chime_list);
+	game(chime_list);
 	return 0;
 }
